@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/users/{id}','App\Http\Controllers\hellocontroller@hello');
+Route::get('/posts/{post}/comments/{comment}','App\Http\Controllers\postcontroller@poster');
+Route::post('/users/{user?}',function ($user=1){
+    return "user".$user;});
